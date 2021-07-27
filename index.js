@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 7000;
+
 const cookieParser = require('cookie-parser');
 const config = require('./config/key');
 const mongoose = require('mongoose');
@@ -95,4 +95,4 @@ app.get('/api/users/logout', auth, (req, res) => {
   });
 });
 
-app.listen(port, () => console.log(`Example app listening on port ${port}`));
+module.exports = app;
