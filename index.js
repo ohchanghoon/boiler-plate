@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const config = require('./config/key');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const { auth } = require('./middleware/auth');
 const { User } = require('./models/User');
 
@@ -14,6 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // application/json
 app.use(bodyParser.json());
 app.use(cookieParser());
+app.use(cores());
 
 mongoose
   .connect(config.mongoURI, {
