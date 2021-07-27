@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // application/json
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(cores());
+app.use(cors());
 
 mongoose
   .connect(config.mongoURI, {
