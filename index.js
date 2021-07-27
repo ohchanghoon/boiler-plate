@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 7000;
-const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const config = require('./config/key');
 const mongoose = require('mongoose');
@@ -10,10 +9,10 @@ const { auth } = require('./middleware/auth');
 const { User } = require('./models/User');
 
 // application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
 // application/json
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
 
