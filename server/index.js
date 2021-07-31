@@ -27,6 +27,9 @@ mongoose
   .catch((err) => console.log(err));
 
 app.get('/', (req, res) => res.send('Hello World~!!'));
+app.get('/api/hello', (req, res) => {
+  res.send('hello hello');
+});
 
 app.post('/api/users/register', (req, res) => {
   // 회원가입 할때 피룡한 정보들을 client에서 가져오면
